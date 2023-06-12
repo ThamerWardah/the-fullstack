@@ -7,8 +7,10 @@ export default function Nav({user}){
             <h1 className="font-mono text-xl text-green-300 font-bold">{user?.name}</h1>
             <div className="flex gap-2 text-sm">
                 <Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/'>Home</Link>
-                <Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/create'>Create</Link>
-                {user ? <button className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" onClick={()=>signOut()}>Sign out</button> :<Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/login'>Sign in</Link>}
+                {user ? <Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/create'>Create</Link>:
+                <Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/register'>Register</Link>}
+                {user ? <button className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" onClick={()=>signOut()}>Sign out</button> :<Link className="border-2 border-slate-500 rounded-full px-2 hover:bg-slate-600" href='/login'>Sign in</Link>
+                }
             </div>
         </nav>
     )
