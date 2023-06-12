@@ -9,7 +9,7 @@ const initialstate = {
     email:"",
     password:""
 }
-export default function register(){
+export default function Register(){
     const [state,setState]=useState(initialstate);
     function handleChange(e){
         setState({...state, [e.target.name]:e.target.value})

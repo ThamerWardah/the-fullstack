@@ -3,7 +3,6 @@
 'use client'
 import Input from "@/app/components/Input"
 import { useState } from "react"
-import { toast } from "react-hot-toast"
 import { useRouter } from "next/navigation"
 import axios from "axios"
 
@@ -11,7 +10,7 @@ const initialstate = {
     name:"",
     description:""
 }
-export default function register(){
+export default function Create(){
     const router = useRouter();
     const [state,setState]=useState(initialstate);
 

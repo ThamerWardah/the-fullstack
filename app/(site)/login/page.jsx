@@ -9,7 +9,7 @@ const initialstate = {
     email:"",
     password:""
 }
-export default function register(){
+export default function Login(){
     const router = useRouter();
     const [state,setState]=useState(initialstate);
     function handleChange(e){
