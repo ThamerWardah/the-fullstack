@@ -1,6 +1,6 @@
 'use client'
 import Input from "@/app/components/Input"
-import { useState } from "react"
+import { useState ,useRef } from "react"
 import {signIn} from 'next-auth/react'
 import { toast } from "react-hot-toast"
 import { useRouter } from "next/navigation"
@@ -9,14 +9,15 @@ const initialstate = {
     email:"",
     password:""
 }
-export default function Login(){
+export default  function Login(){
+   
     const router = useRouter();
     const [state,setState]=useState(initialstate);
     function handleChange(e){
         setState({...state, [e.target.name]:e.target.value})
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         signIn('credentials',{...state , redirect:false}).then((callback)=>{
             if(callback?.error){toast.error(callback.error)}

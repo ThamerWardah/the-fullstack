@@ -21,7 +21,7 @@ export default function Create(){
     const handleSubmit = (e) =>{
         e.preventDefault();
         axios.post('/api/create',state).then(()=>alert('Blog has been published')).catch(()=>alert("Something wrong happen with your blog"))
-    
+        router.refresh();
     }
     return(
     <div>
